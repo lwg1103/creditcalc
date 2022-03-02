@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/index}" th:object="${input}" method="post">
+    <p>creditAmount: <input type="text" th:field="*{creditAmount}" /></p>
+    <p>installmentsPerYear: <input type="text" th:field="*{installmentsPerYear}" /></p>
+    <p>years: <input type="text" th:field="*{years}" /></p>
+    <p>fixedInterest: <input type="text" th:field="*{fixedInterest}" /></p>
+    <p>variableInterest: <input type="text" th:field="*{variableInterest}" /></p>
+    <p><input type="submit" value="Calculate" /> <input type="reset" value="Reset" /></p>
+</form>
+<div th:if="${installment}">
+    <b>Installment: <span th:text="${installment}"></span></b>
+</div>
+</body>
+</html>
